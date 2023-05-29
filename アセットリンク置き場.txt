@@ -2,3 +2,5 @@
 https://assetstore.unity.com/packages/2d/textures-materials/water/simple-water-shader-urp-191449
 ・水エフェクト
 https://booth.pm/ja/items/4013426
+.Stage3自機
+https://assetstore.unity.com/packages/3d/characters/robots/tiny-robots-pack-98930
