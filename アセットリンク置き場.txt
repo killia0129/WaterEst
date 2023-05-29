@@ -1,2 +1,4 @@
 ・水
 https://assetstore.unity.com/packages/2d/textures-materials/water/simple-water-shader-urp-191449
+・水エフェクト
+https://booth.pm/ja/items/4013426
