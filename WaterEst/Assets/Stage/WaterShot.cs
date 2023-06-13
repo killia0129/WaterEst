@@ -11,6 +11,8 @@ public class WaterShot : MonoBehaviour
     private float shotSpan;         //ショット間隔
     private float shotElapsedTime;  //ショット経過時間
     [SerializeField] private ParticleSystem particle;
+
+    bool waterActive;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,18 +30,19 @@ public class WaterShot : MonoBehaviour
         shotElapsedTime += Time.deltaTime;  //ショット経過時間をカウント
         if (shotElapsedTime >= shotSpan)
         {
-            rand = Random.Range(1, 3);  //ランダム１～４
+            rand = Random.Range(1, 2);  //ランダム１～４
             if (rand == 1)              //1が出たら水を撃つ
             {
+                waterActive = true;
                 Play();
             }
             shotElapsedTime = 0;        //ショット経過時間をリセット
         }
-        Debug.Log(shotElapsedTime);     //★デバッグ用
+        //Debug.Log(shotElapsedTime);     //★デバッグ用
     }
 
     // 1. 再生
-    private void Play()
+    public void Play()
     {
         playElapsedTime += Time.deltaTime;     //再生経過時間をカウント
         stopElapsedTime += Time.deltaTime;     //停止経過時間をカウント
@@ -51,14 +54,18 @@ public class WaterShot : MonoBehaviour
     }
 
     // 2. 一時停止
-    private void Pause()
+    public void Pause()
     {
         particle.Pause();
     }
 
     // 3. 停止
-    private void Stop()
+    public void Stop()
     {
         particle.Stop();
+    }
+    private void OnParticleSystemStopped()
+    {
+        Debug.Log("stop!");
     }
 }
