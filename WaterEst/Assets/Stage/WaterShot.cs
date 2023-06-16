@@ -12,7 +12,7 @@ public class WaterShot : MonoBehaviour
     private float shotElapsedTime;  //ショット経過時間
     [SerializeField] private ParticleSystem particle;
 
-    bool waterActive;
+    public bool waterActive;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +22,7 @@ public class WaterShot : MonoBehaviour
 
         shotSpan = 5;   //ショット間隔を設定
         shotElapsedTime = 0; //ショット経過時間をリセット
+        waterActive = true;
     }
 
     // Update is called once per frame
@@ -33,8 +34,11 @@ public class WaterShot : MonoBehaviour
             rand = Random.Range(1, 2);  //ランダム１～４
             if (rand == 1)              //1が出たら水を撃つ
             {
-                waterActive = true;
-                Play();
+                if(waterActive)
+                {
+                    Play();
+                }
+               
             }
             shotElapsedTime = 0;        //ショット経過時間をリセット
         }
