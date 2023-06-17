@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class WaterShot : MonoBehaviour
 {
@@ -13,12 +14,6 @@ public class WaterShot : MonoBehaviour
     [SerializeField] private ParticleSystem particle;
 
     public bool waterActive;
-
-    [SerializeField] private GameObject P1;
-    [SerializeField] private GameObject P2;
-    [SerializeField] private GameObject P3;
-    [SerializeField] private GameObject P4;
-
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +44,7 @@ public class WaterShot : MonoBehaviour
             }
             shotElapsedTime = 0;        //ショット経過時間をリセット
         }
-        //Debug.Log(shotElapsedTime);     //★デバッグ用
+      
     }
 
     // 1. 再生
@@ -74,9 +69,5 @@ public class WaterShot : MonoBehaviour
     public void Stop()
     {
         particle.Stop();
-    }
-    private void OnParticleSystemStopped()
-    {
-        Debug.Log("stop!");
     }
 }

@@ -46,12 +46,10 @@ public class SwitchSystem : MonoBehaviour
             waterStopElapsedTime = 0;
             switchReset = true;
         }
-        if (active == false && transform.position.y < bottomPosY&&switchReset == true)    //★押すタイミングによって戻る速さが変わるバグを直す
+        if (active == false && transform.position.y < bottomPosY&&switchReset == true)  
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
         }
-
-        Debug.Log(waterStopElapsedTime);
     }
 
     private void OnTriggerEnter(Collider other)
