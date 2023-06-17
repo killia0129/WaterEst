@@ -13,6 +13,13 @@ public class WaterShot : MonoBehaviour
     [SerializeField] private ParticleSystem particle;
 
     public bool waterActive;
+
+    [SerializeField] private GameObject P1;
+    [SerializeField] private GameObject P2;
+    [SerializeField] private GameObject P3;
+    [SerializeField] private GameObject P4;
+
+
     // Start is called before the first frame update
     void Start()
     {
