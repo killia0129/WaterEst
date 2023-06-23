@@ -15,6 +15,9 @@ public class WaterShot : MonoBehaviour
 
     public bool waterActive;
 
+   
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +33,7 @@ public class WaterShot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         shotElapsedTime += Time.deltaTime;  //ショット経過時間をカウント
         if (shotElapsedTime >= shotSpan)
         {
@@ -44,7 +48,7 @@ public class WaterShot : MonoBehaviour
             }
             shotElapsedTime = 0;        //ショット経過時間をリセット
         }
-      
+       
     }
 
     // 1. 再生
