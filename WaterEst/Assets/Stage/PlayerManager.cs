@@ -11,6 +11,11 @@ public class PlayerManager : MonoBehaviour
     
     int[] player = new int[4];
 
+    int posCom0;
+    int posCom1;
+    int posCom2;
+    int posCom3;
+    int max;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,25 +25,28 @@ public class PlayerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player[0] = Player1.playerPos;
+        player[1] = Player2.playerPos;
+        player[2] = Player3.playerPos;
+        player[3] = Player4.playerPos;
+
         for (int i=1;i<4;i++)
         {
-            switch (i)
+            if (player[i] == 0)
             {
-                case 0:
-                    player[i] = Player1.playerPos;
-                    break;
-
-                case 1:
-                    player[i] = Player2.playerPos;
-                    break;
-
-                case 2:
-                    player[i] = Player3.playerPos;
-                    break;
-
-                case 3:
-                    player[i] = Player4.playerPos;
-                    break;
+                posCom0 += 1;
+            }
+            if (player[i] == 1)
+            {
+                posCom1 += 1;
+            }
+            if (player[i] == 2)
+            {
+                posCom2 += 1;
+            }
+            if (player[i] == 3)
+            {
+                posCom3 += 1;
             }
         }
     }
