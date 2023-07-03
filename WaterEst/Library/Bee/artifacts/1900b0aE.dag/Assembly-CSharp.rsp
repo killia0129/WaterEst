@@ -371,6 +371,7 @@
 "Assets/Stage/UnityTechnologies/ParticlePack/Shared/Scripts/SimpleCharacterMotor.cs"
 "Assets/Stage/UnityTechnologies/ParticlePack/TutorialInfo/Scripts/Readme.cs"
 "Assets/Stage/WaterCollision.cs"
+"Assets/Stage/WaterManager.cs"
 "Assets/Stage/WaterShot.cs"
 -langversion:9.0
 

@@ -12,6 +12,8 @@ public class WaterShot : MonoBehaviour
     private float shotSpan;         //ショット間隔
     private float shotElapsedTime;  //ショット経過時間
     [SerializeField] private ParticleSystem particle;
+    [SerializeField] private PlayerManager playerManager;
+
 
     public bool waterActive;
 
@@ -37,15 +39,11 @@ public class WaterShot : MonoBehaviour
         shotElapsedTime += Time.deltaTime;  //ショット経過時間をカウント
         if (shotElapsedTime >= shotSpan)
         {
-            rand = Random.Range(1, 2);  //ランダム１～４
-            if (rand == 1)              //1が出たら水を撃つ
-            {
+            playerManager.PlayerPosCom();       //プレイヤーの場所を比較させて水を打つか判定
                 if(waterActive)
                 {
                     Play();
                 }
-               
-            }
             shotElapsedTime = 0;        //ショット経過時間をリセット
         }
        
