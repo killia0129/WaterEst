@@ -12,11 +12,14 @@ public class SwitchSystem : MonoBehaviour
     [SerializeField] private WaterShot WaterShotScript;
     [SerializeField] private ParticleSystem particle;
 
+    [SerializeField] Rotate RotateScript;
+
     float repeatSpan = 8;
     float waterStopElapsedTime = 0;
     float bottomPosY;
     bool switchReset;
-    // Start is called before the first frame update
+   
+
     void Start()
     {
         repeatSpan = 7;
@@ -49,6 +52,12 @@ public class SwitchSystem : MonoBehaviour
         if (active == false && transform.position.y < bottomPosY&&switchReset == true)  
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
+        }
+
+        if(active == false && RotateScript.rotateActive)                    //回転が始まったらスイッチ本体を消す
+        {
+            transform.position -= Vector3.up * speed * Time.deltaTime;
+            Destroy(this.gameObject, 2.0f);
         }
     }
 

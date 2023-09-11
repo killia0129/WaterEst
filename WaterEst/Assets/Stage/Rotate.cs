@@ -4,20 +4,32 @@ using UnityEngine;
 
 public class Rotate : MonoBehaviour
 {
-   // [SerializeField] float rotateSpeed = 0.1f;
-    // Start is called before the first frame update
+
+
+    [SerializeField] float rotateSpeed = 0.1f;
+    [SerializeField] float rotateTime;
+    private float time;
+
+    public bool rotateActive;
     void Start()
     {
-        
+        time = 0.0f;
+        rotateActive = false;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //transform.Rotate(new Vector3(0, rotateSpeed, 0));
-        //if (Input.GetKeyDown("space"))
-        //{
-        //    rotateSpeed = -rotateSpeed;
-        //}
+        //経過時間をカウント
+        time += Time.deltaTime;
+
+        if(time >= rotateTime)
+        { 
+            rotateActive = true;
+            transform.Rotate(new Vector3(0, rotateSpeed, 0));
+            if (Input.GetKeyDown("space"))
+            {
+                rotateSpeed = -rotateSpeed;
+            }
+        }
     }
 }
